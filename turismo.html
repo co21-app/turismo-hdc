@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Turismo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="media/CO21-logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="turismo-styles.css">
+</head>
+<body>
+    <header>
+        <span class="eyebrow">Calculadora de Turismo Sostenible</span>
+        <h2 class="fw-normal lh-1">Calcula la Huella de Carbono de tu Viaje</h2>
+        <p class="lead">Una huella de carbono es un estudio que permite determinar cuántos gases de efecto invernadero son emitidos a la atmósfera por las actividades que realiza una persona.
+            Cada caso debe estudiarse de forma individual, pero nuestra calculadora te puede ayudar a tener una idea de cuánto estas generando.
+            Solo vos vas a poder ver tu resultado y no nos quedamos con ninguna información que cargues al formulario.
+         </p>
+    </header>
+    <div class="container" id="calculadora-turismo">
+        <div class="calc-section">
+            <h3 class="section-title">Viajeros <i class="material-icons">hail</i></h3>
+            <div class="form-group row">
+                <label for="cantidadGente" class="form-label">¿Cuántas personas son en tu grupo?</label>
+                <input type="number" class="form-control" id="cantidadGente" min="1">
+            </div>
+            <div class="form-group row">
+                <label for="cantidadGente" class="form-label">¿Cuántas noches pasaron en la provincia?</label>
+                <input type="number" class="form-control" id="cantidadNoches" min="1">
+            </div>
+        </div>
+
+        <div class="calc-section">
+            <h3 class="section-title">Movilidad <i class="material-icons">emoji_transportation</i></h3>
+            <div class="form-group row">
+                <label for="arrival" class="form-label">¿Cómo llegaron a la provincia?</label>
+                <select name="arrival" id="arrival" class="form-control">
+                    <option disabled selected value="sin-elegir">--Seleccionar--</option>
+                    <option value="moto">En moto</option>
+                    <option value="auto">En auto</option>
+                    <option value="bus">En bus</option>
+                    <option value="avion">En avión</option>
+                    <option value="no">No corresponde</option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label for="distance" class="form-label" >¿Cuántos kilómetros recorrieron para llegar?</label>
+                <input type="number" id="distance" class="form-control" min="1">
+            </div>
+
+            <div class="form-group row">
+                <label for="transportation" class="form-label">¿De qué manera se movilizan por Misiones?</label>
+                <select name="transportation" id="transportation" class="form-control">
+                    <option disabled selected value="sin-elegir">--Seleccionar--</option>
+                    <option value="moto">En moto</option>
+                    <option value="auto">En auto</option>
+                    <option value="bus">En bus</option>
+                    <option value="pie">A pie</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="calc-section">
+            <h3 class="section-title">Ubicaciones <i class="material-icons">location_on</i></h3>
+            <div class="form-group row">
+              <label for="origen" class="form-label">¿En cuál localidad se hospedan?</label>
+              <select name="origen" id="origen" class="form-control">
+                <option disabled selected value="sin-elegir">--Seleccionar--</option>
+                <option value='a_del_valle'>A. del Valle</option>
+                <option value='alba_pose'>Alba Pose</option>
+                <option value='andresito'>Andresito</option>
+                <option value='aposteles'>Apóstoles</option>
+                <option value='b_de_irigoyen'>B. de Irigoyen</option>
+                <option value='candelaria'>Candelaria</option>
+                <option value='capiovi'>Capioví</option>
+                <option value='el_soberbio'>El Soberbio</option>
+                <option value='eldorado'>Eldorado</option>
+                <option value='jardin_america'>Jardín América</option>
+                <option value='ln_alem'>L.N Alem</option>
+                <option value='montecarlo'>Montecarlo</option>
+                <option value='obera'>Oberá</option>
+                <option value='posadas'>Posadas</option>
+                <option value='puerto_iguazu'>Puerto Iguazú</option>
+                <option value='puerto_rico'>Puerto Rico</option>
+                <option value='san_ignacio'>San Ignacio</option>
+                <option value='san_javier'>San Javier</option>
+                <option value='san_jose'>San José</option>
+                <option value='san_pedro'>San Pedro</option>
+                <option value='san_vicente'>San Vicente</option>
+                <option value='santa_ana'>Santa Ana</option>
+                <option value='wanda'>Wanda</option>
+              </select>
+            </div>
+
+            <div class="form-group row">
+              <p class="form-label">¿Visitaron más de una localidad?</p>
+
+                <div class="form-check">
+                  <label for="placesNo" class="form-check-label" >No</label>
+                  <input type="radio" id="placesNo" class="form-check-input" name="places" checked>
+                </div>
+
+                <div class="form-check">
+                  <label for="placesYes" class="form-check-label" >Sí</label>
+                  <input type="radio" id="placesYes" class="form-check-input" name="places">
+                </div>
+            </div>
+
+            <div class="row" id="placesList">
+            <div class="form-group row">
+              <label for="destino1" class="form-label">Siguiente destino:</label>
+              <div class="col-sm-4" id="destinos-list">
+                <select name="destino" id="listaLocalidades" class="form-control">
+                  <option disabled selected value="sin-elegir">--Seleccionar--</option>
+                  <option value='a_del_valle'>A. del Valle</option>
+                  <option value='alba_pose'>Alba Pose</option>
+                  <option value='andresito'>Andresito</option>
+                  <option value='aposteles'>Apóstoles</option>
+                  <option value='b_de_irigoyen'>B. de Irigoyen</option>
+                  <option value='candelaria'>Candelaria</option>
+                  <option value='capiovi'>Capioví</option>
+                  <option value='el_soberbio'>El Soberbio</option>
+                  <option value='eldorado'>Eldorado</option>
+                  <option value='jardin_america'>Jardín América</option>
+                  <option value='ln_alem'>L.N Alem</option>
+                  <option value='montecarlo'>Montecarlo</option>
+                  <option value='obera'>Oberá</option>
+                  <option value='posadas'>Posadas</option>
+                  <option value='puerto_iguazu'>Puerto Iguazú</option>
+                  <option value='puerto_rico'>Puerto Rico</option>
+                  <option value='san_ignacio'>San Ignacio</option>
+                  <option value='san_javier'>San Javier</option>
+                  <option value='san_jose'>San José</option>
+                  <option value='san_pedro'>San Pedro</option>
+                  <option value='san_vicente'>San Vicente</option>
+                  <option value='santa_ana'>Santa Ana</option>
+                  <option value='wanda'>Wanda</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <button class="btn btn-secondary" id="addVisit">Agregar otro destino</button>
+              </div>
+          </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <p><button type="button" class="btn btn-primary" id="btn-calcular">Calcular la huella del viaje</button></p>
+        </div>
+    </div>
+    <div class="container" id="resultadosHuella">
+
+      <div class="huella-card">
+        <svg xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 -960 960 960" width="100"><path d="M220-640q-17 0-28.5-11.5T180-680q0-17 11.5-28.5T220-720q17 0 28.5 11.5T260-680q0 17-11.5 28.5T220-640ZM400-80q-66 0-113-47t-47-113v-240q0-100 70-170t170-70h73q69 0 118 46.5T720-559q0 46-24.5 84.5T629-416q-32 15-50.5 44.5T560-307v67q0 67-46.5 113.5T400-80Zm-80-640q-17 0-28.5-11.5T280-760v-20q0-17 11.5-28.5T320-820q17 0 28.5 11.5T360-780v20q0 17-11.5 28.5T320-720Zm80 560q33 0 56.5-23.5T480-240v-67q0-58 30.5-107t83.5-74q21-10 33.5-29.5T640-560q0-35-26-57.5T553-640h-73q-66 0-113 47t-47 113v240q0 33 23.5 56.5T400-160Zm40-600q-17 0-28.5-11.5T400-800v-20q0-17 11.5-28.5T440-860q17 0 28.5 11.5T480-820v20q0 17-11.5 28.5T440-760Zm120 0q-17 0-28.5-11.5T520-800v-40q0-17 11.5-28.5T560-880q17 0 28.5 11.5T600-840v40q0 17-11.5 28.5T560-760Zm140 40q-25 0-42.5-17.5T640-780v-40q0-25 17.5-42.5T700-880q25 0 42.5 17.5T760-820v40q0 25-17.5 42.5T700-720Z"/></svg>
+        <h2 class="fw-normal lh-1">La huella de carbono del grupo fue de: <span id="huellaValor"></span> kg de CO2</h2>
+      </div>
+
+      <div class="stats-row">
+          <div id="emisionesViaje"></div>
+          <div id="emisionesLocales"></div>
+      </div>
+      <div class="tips-card">
+        <h3 class="lead">Podrían compensarla plantando <span id="arboles"></span> árboles</h3>
+        <br>
+        <h3 class="fw-normal lh-3">Otros tips para reducir su huella:</h3>
+        <ul class="lead">
+          <li>Clasificar los residuos que generas y llevar los reciclables al Ecopunto o contenedor verde más cercano.</li>
+          <li>Consumir alimentos y productos locales.</li>
+          <li>Reducir al máximo el uso de automóvil, y maximizar las caminatas,uso de bicicletas y transporte público.</li>
+          <li>Tener un uso responsable de los recursos como el agua y energía eléctrica.</li>
+          <li>Maximizar el uso las toallas en los alojamientos.</li>
+      </ul>
+      </div>
+      <div class="row">
+          <p><button type="button" class="btn btn-secondary" id="btn-recalcular">Volver a calcular</button></p>
+      </div>
+    </div>
+    <script src="turismo-script.js"></script>
+    <script src="distancias.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        // Evita que el navegador restaure el scroll anterior al recargar la página
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        document.getElementById('btn-recalcular').addEventListener('click', function () {
+            location.reload();
+        });
+
+        // Se registra en DOMContentLoaded para que se ejecute después de que
+        // turismo-script.js haya calculado y mostrado los resultados.
+        // Se usa scroll instantáneo: al ocultar el formulario cambia el alto de
+        // la página, y eso corta la animación de "scroll-behavior: smooth".
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('btn-calcular').addEventListener('click', function () {
+                if (document.getElementById('resultadosHuella').style.display === 'block') {
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

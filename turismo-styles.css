@@ -1,0 +1,213 @@
+:root{
+    --cf-primary: #1b7a43;
+    --cf-primary-dark: #125c33;
+    --cf-primary-light: #e7f5ec;
+    --cf-accent: #2f9e60;
+    --cf-text: #1f2937;
+    --cf-muted: #6b7280;
+    --cf-surface: #ffffff;
+    --cf-bg: #f4f8f6;
+    --cf-radius: 18px;
+    --cf-shadow: 0 10px 30px rgba(15, 60, 35, .08);
+}
+
+body{
+    background: var(--cf-bg);
+    color: var(--cf-text);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+h2, h3{
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Sin barra de navegación en esta página */
+header{
+    padding: 56px 24px 40px;
+    box-sizing: border-box;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+header .eyebrow{
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--cf-primary-light);
+    color: var(--cf-primary-dark);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+header h2{
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--cf-primary-dark);
+    margin-bottom: 16px;
+}
+header p.lead{
+    color: var(--cf-muted);
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+#calculadora-turismo, #resultadosHuella{
+    max-width: 720px;
+    margin: 0 auto 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.calc-section{
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.section-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--cf-primary-dark);
+    margin-bottom: 24px;
+}
+.section-title .material-icons{
+    background: var(--cf-primary-light);
+    color: var(--cf-primary);
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 1.4rem;
+}
+
+.form-label{
+    font-weight: 500;
+    color: var(--cf-text);
+}
+
+.form-control{
+    border-radius: 12px;
+    border: 1px solid #dfe5e2;
+    padding: 10px 14px;
+}
+.form-control:focus{
+    border-color: var(--cf-accent);
+    box-shadow: 0 0 0 .2rem rgba(47,158,96,.15);
+}
+
+.form-check-input:checked{
+    background-color: var(--cf-primary);
+    border-color: var(--cf-primary);
+}
+
+.btn{
+    border-radius: 999px;
+    font-weight: 600;
+    padding: 10px 28px;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+
+.btn-primary{
+    background: var(--cf-primary);
+    border-color: var(--cf-primary);
+}
+.btn-primary:hover{
+    background: var(--cf-primary-dark);
+    border-color: var(--cf-primary-dark);
+    box-shadow: 0 8px 20px rgba(27,122,67,.25);
+}
+
+.btn-secondary{
+    background: var(--cf-surface);
+    border: 1.5px solid var(--cf-primary);
+    color: var(--cf-primary-dark);
+}
+.btn-secondary:hover{
+    background: var(--cf-primary-light);
+    color: var(--cf-primary-dark);
+}
+
+/* Resultados */
+#resultadosHuella{
+    text-align: center;
+}
+.huella-card{
+    background: linear-gradient(135deg, var(--cf-primary) 0%, var(--cf-accent) 100%);
+    color: #fff;
+    border-radius: var(--cf-radius);
+    padding: 40px 24px;
+    box-shadow: var(--cf-shadow);
+    margin-bottom: 24px;
+}
+.huella-card svg{
+    fill: #fff;
+    opacity: .9;
+    height: 64px;
+    width: 64px;
+}
+.huella-card h2{
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 12px 0 0;
+}
+.huella-card #huellaValor{
+    font-size: 2.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stats-row{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.stats-row > div{
+    flex: 1;
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: 20px;
+}
+.stats-row p{ margin: 0; color: var(--cf-muted); }
+.stats-row b{ color: var(--cf-primary-dark); font-size: 1.4rem; }
+
+.tips-card{
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: 32px;
+    text-align: left;
+}
+.tips-card h3{
+    color: var(--cf-primary-dark);
+    font-weight: 600;
+}
+.tips-card ul{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.tips-card li{
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    color: var(--cf-text);
+}
+.tips-card li::before{
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--cf-accent);
+    font-weight: 700;
+}
+
+@media (max-width: 576px){
+    .stats-row{ flex-direction: column; }
+    header h2{ font-size: 1.7rem; }
+    .calc-section, .tips-card{ padding: 24px; }
+}
